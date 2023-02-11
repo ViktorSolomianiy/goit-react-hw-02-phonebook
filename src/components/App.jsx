@@ -42,7 +42,7 @@ export class App extends Component {
 
     for (const item of contacts) {
       if (name === item.name) {
-        alert(name + ' ' + 'is already in contacts');
+        alert(name + ' is already in contacts');
       }
     }
 
