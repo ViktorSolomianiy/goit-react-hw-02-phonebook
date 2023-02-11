@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
-
 import './App.css';
 
 import ContactsForm from './Contacts/ContactsForm';
@@ -16,12 +16,6 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-  };
-
-  deleteContact = id => {
-    this.setState(prevState => ({
-      contacts: prevState.contacts.filter(contact => contact.id !== id),
-    }));
   };
 
   handlerSubmit = e => {
@@ -63,6 +57,12 @@ export class App extends Component {
     );
   };
 
+  deleteContact = id => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id),
+    }));
+  };
+
   reset = () => {
     this.setState({ name: '', number: '' });
   };
@@ -85,3 +85,16 @@ export class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  state: PropTypes.objectOf({
+    contacts: PropTypes.array.isRequired,
+    filter: PropTypes.string.isRequired,
+  }),
+
+  handlerSubmit: PropTypes.func.isRequired,
+  changeFilter: PropTypes.func.isRequired,
+  getVisibleContacts: PropTypes.func.isRequired,
+  deleteContact: PropTypes.func.isRequired,
+  reset: PropTypes.func.isRequired,
+};
