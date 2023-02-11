@@ -91,10 +91,4 @@ App.propTypes = {
     contacts: PropTypes.array.isRequired,
     filter: PropTypes.string.isRequired,
   }),
-
-  handlerSubmit: PropTypes.func.isRequired,
-  changeFilter: PropTypes.func.isRequired,
-  getVisibleContacts: PropTypes.func.isRequired,
-  deleteContact: PropTypes.func.isRequired,
-  reset: PropTypes.func.isRequired,
 };

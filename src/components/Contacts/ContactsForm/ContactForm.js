@@ -61,8 +61,6 @@ ContactForm.propTypes = {
   }),
 
   onSubmit: PropTypes.func.isRequired,
-  handleNumberChange: PropTypes.func.isRequired,
-  handleNameChange: PropTypes.func.isRequired,
 };
 
 export default ContactForm;
